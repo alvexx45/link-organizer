@@ -1,5 +1,7 @@
 import { Text, View, Image } from "react-native"
+import { MaterialIcons } from "@expo/vector-icons"
 import { styles } from "./styles"
+import { colors } from "@/styles/colors"
 
 export default function Index(){
     return (
