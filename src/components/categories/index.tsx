@@ -11,6 +11,10 @@ export function Categories() {
             renderItem={({ item }) => (
                 <Category name={item.name} icon={item.icon} isSelected={false} />
             )}
+            horizontal
+            style={styles.container}
+            contentContainerStyle={styles.content}
+            // showsHorizontalScrollIndicator={false}
         />
     )
 }
