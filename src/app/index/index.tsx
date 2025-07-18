@@ -27,6 +27,9 @@ export default function Index() {
                         onDetails={() => console.log("Clicou")}
                     />
                 )}
+                style={styles.links}
+                contentContainerStyle={styles.linksContent}
+                showsVerticalScrollIndicator={false}
             />
         </View>
     )
