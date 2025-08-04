@@ -19,7 +19,11 @@ export default function Add() {
 
             <Text style={styles.label}>Selecione uma categoria</Text>
             <Categories />
-            <Input />
+
+            <View style={styles.form} >
+                <Input placeholder="Nome" />
+                <Input placeholder="Url" />
+            </View>
         </View>
     )
 }
