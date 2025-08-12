@@ -28,6 +28,14 @@ export default function Add() {
                 return Alert.alert("URL", "Informe a URL")
             }
 
+            await linkStorage.save({
+                id: new Date().getTime().toString(),
+                name, url, category
+            })
+
+            const data = await linkStorage.get()
+            console.log(data)
+
             console.log({ category, name, url })
 
         } catch (error) {
@@ -52,7 +60,7 @@ export default function Add() {
 
             <View style={styles.form} >
                 <Input placeholder="Nome" onChangeText={setName} autoCorrect={false} />
-                <Input placeholder="URL" onChangeText={setUrl} autoCorrect={false} />
+                <Input placeholder="URL" onChangeText={setUrl} autoCorrect={false} autoCapitalize="none" />
                 <Button title="Adicionar" onPress={handleAdd} />
             </View>
 
