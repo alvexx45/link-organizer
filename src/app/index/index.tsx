@@ -17,7 +17,7 @@ export default function Index() {
     async function getLinks() {
         try {
             const response = await linkStorage.get()
-            const filtered = response.filter((link) => link.category === category )
+            const filtered = response.filter((link) => link.category === category)
             setLinks(filtered)
 
         } catch (error) {
@@ -27,7 +27,7 @@ export default function Index() {
 
     useFocusEffect(useCallback(() => {
         getLinks()
-    }, []))
+    }, [category]))
 
     return (
         <View style={styles.container}>
