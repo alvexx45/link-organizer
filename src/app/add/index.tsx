@@ -30,13 +30,11 @@ export default function Add() {
 
             await linkStorage.save({
                 id: new Date().getTime().toString(),
-                name, url, category
+                name, url, category,
             })
 
             const data = await linkStorage.get()
             console.log(data)
-
-            console.log({ category, name, url })
 
         } catch (error) {
             Alert.alert("Erro", "Não foi possível salvar o link")
