@@ -1,4 +1,4 @@
-import { FlatList, View, Image, TouchableOpacity, Modal, Text, Alert } from "react-native"
+import { FlatList, View, Image, TouchableOpacity, Modal, Text, Alert, Linking } from "react-native"
 import { MaterialIcons } from "@expo/vector-icons"
 import { styles } from "./styles"
 import { colors } from "@/styles/colors"
@@ -37,6 +37,14 @@ export default function Index() {
             await linkStorage.remove(link.id)
             getLinks()
             setShowModal(false)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    async function handleOpen() {
+        try {
+            await Linking.openURL(link.url)
         } catch (error) {
             throw error
         }
@@ -90,7 +98,7 @@ export default function Index() {
 
                         <View style={styles.modalFooter} >
                             <Option name="Excluir" icon="delete" variant="secondary" onPress={handleRemove} />
-                            <Option name="Abrir" icon="language" />
+                            <Option name="Abrir" icon="language" onPress={handleOpen} />
                             
                         </View>
                     </View>
